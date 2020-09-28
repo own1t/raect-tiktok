@@ -8,7 +8,7 @@ import VideoSidebar from "./VideoSidebar";
 // CSS
 import "./Video.css";
 
-function Video() {
+function Video({ url, channel, description, song, likes, messages, shares }) {
   const [playing, setPlaying] = useState(false);
 
   const videoRef = useRef(null);
@@ -27,14 +27,15 @@ function Video() {
     <div className="video">
       <video
         className="video__player"
-        src="http://techslides.com/demos/sample-videos/small.ogv"
+        // src="http://techslides.com/demos/sample-videos/small.ogv"
+        src={url}
         loop
         ref={videoRef}
         onClick={handleVideoPlay}
       />
 
-      <VideoFooter channel="ownit" description="description" song="song" />
-      <VideoSidebar likes={300} messages={200} shares={100} />
+      <VideoFooter channel={channel} description={description} song={song} />
+      <VideoSidebar likes={likes} messages={messages} shares={shares} />
     </div>
   );
 }
