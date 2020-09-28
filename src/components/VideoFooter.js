@@ -10,19 +10,19 @@ import MusicNoteIcon from "@material-ui/icons/MusicNote";
 // CSS
 import "./VideoFooter.css";
 
-function VideoFooter() {
+function VideoFooter({ channel, description, song }) {
   return (
     <div className="videoFooter">
       <div className="videoFooter__text">
-        <h3>username</h3>
-        <p>description</p>
+        <h3>@{channel}</h3>
+        <p>{description}</p>
         <MusicNoteIcon className="videoFooter__icon" />
 
         <div className="videoFooter__ticker">
           <Ticker mode="smooth">
             {({ index }) => (
               <>
-                <p>Yo</p>
+                <p>{song}</p>
               </>
             )}
           </Ticker>

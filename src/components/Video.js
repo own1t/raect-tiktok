@@ -3,6 +3,7 @@ import React, { useRef, useState } from "react";
 
 // Components
 import VideoFooter from "./VideoFooter";
+import VideoSidebar from "./VideoSidebar";
 
 // CSS
 import "./Video.css";
@@ -32,7 +33,8 @@ function Video() {
         onClick={handleVideoPlay}
       />
 
-      <VideoFooter />
+      <VideoFooter channel="ownit" description="description" song="song" />
+      <VideoSidebar likes={300} messages={200} shares={100} />
     </div>
   );
 }
